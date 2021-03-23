@@ -6,7 +6,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+button {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+button:focus {
+  border: none;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
