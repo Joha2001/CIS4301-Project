@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import oracledb from 'oracledb';
+//import oracledb from 'oracledb';
 
 //var oracle = require('oracledb');
 
