@@ -1,6 +1,5 @@
 import React from 'react';
-import './Home.css';
-const Contact = () => {
+const Visualization = () => {
     return (
         <div className="App">
         <header className="App-header">
@@ -14,4 +13,4 @@ const Contact = () => {
     );
 }
  
-export default Contact;
+export default Visualization;
