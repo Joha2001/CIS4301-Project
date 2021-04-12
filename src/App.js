@@ -5,6 +5,12 @@ import About from './components/About/About.js';
 import Navigation from './components/Navigation/Navigation.js';
 import Documentation from './components/Documentation/Documentation.js';
 import Visualization from './components/Visualization/Visualization.js';
+import V1 from './components/Visualization/V1.js';
+import V2 from './components/Visualization/V2.js';
+import V3 from './components/Visualization/V3.js';
+import V4 from './components/Visualization/V4.js';
+import V5 from './components/Visualization/V5.js';
+import VCustom from './components/Visualization/VCustom.js';
 import Steam from './components/Steam/Steam.js';
 class App extends Component {
   render() {
@@ -17,6 +23,12 @@ class App extends Component {
            <Route path="/Steam" component={Steam}/>
            <Route path="/Documentation" component={Documentation}/>
            <Route path="/Visualizations" component={Visualization}/>
+           <Route path="/V1" component={V1}/>
+           <Route path="/V2" component={V2}/>
+           <Route path="/V3" component={V3}/>
+           <Route path="/V4" component={V4}/>
+           <Route path="/V5" component={V5}/>
+           <Route path="/VCustom" component={VCustom}/>
          </Switch>
     </BrowserRouter>
     );

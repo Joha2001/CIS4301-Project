@@ -1,0 +1,17 @@
+.visunav {
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.nav-link {
+    background-color: #171a21;
+    color: #c7d5e0;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+}
+.nav-link:hover {
+    background-color: #61dafb;
+}

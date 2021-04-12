@@ -1,13 +1,13 @@
 import React from 'react';
 import './Visualization.css';
 import VisuNav from './VisuNav/VisuNav.js'
-const Visualization = () => {
+const V2 = () => {
     return (
         <div className="App">
         <header className="App-header">
         <VisuNav></VisuNav>
         <div>
-          <h1 className="app-h1">Visualizations</h1>
+          <h1 className="app-h1">Average Price of Games Released Per Month</h1>
        </div>
         </header>
       </div>
@@ -15,4 +15,4 @@ const Visualization = () => {
     );
 }
  
-export default Visualization;
+export default V2;
