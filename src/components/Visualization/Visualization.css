@@ -17,3 +17,35 @@
     margin: 0 auto;
     text-align: center;
 }
+
+.chart {
+  position: absolute;
+  top: 280px;
+  background-color: white;
+  padding: 20px;
+}
+
+.id {
+  position: absolute;
+  top: 940px;
+  padding-right: 300px;
+}
+
+.idlabel {
+  font-size: calc(10px + 4vmin);
+}
+
+input[type=number],[type=text] {
+  position: absolute;
+  top: 15px;
+  padding: 10px;
+  padding-right: 15px;
+}
+input[type="submit"] {
+  position: absolute;
+  top: 15px;
+  padding: 10px;
+  left: 460px;
+  background-color:#171a21;
+  color: #c7d5e0;
+}
