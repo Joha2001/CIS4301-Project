@@ -1,12 +1,13 @@
 let connection;
 var oracledb = require('oracledb');
+require("dotenv").config();
 
 (async function() {
 try{
    connection = await oracledb.getConnection({
-        user : 'maklein',
-        password : 'Chimera15',
-        connectString : (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = oracle.cise.ufl.edu)(PORT = 1521))(CONNECT_DATA = (SID = orcl)))
+        user : process.env.USER,
+        password : process.env.PASSWORD,
+        connectString : process.env.CONNECT_STRING
    });
    console.log("Successfully connected to Oracle!")
 } catch(err) {
