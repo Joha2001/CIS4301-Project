@@ -6,7 +6,7 @@ try{
    connection = await oracledb.getConnection({
         user : '',
         password : '',
-        connectString : (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = oracle.cise.ufl.edu)(PORT = 1521))(CONNECT_DATA = (SID = orcl)))
+        connectString : '(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = oracle.cise.ufl.edu)(PORT = 1521))(CONNECT_DATA = (SID = orcl)))'
    });
    console.log("Successfully connected to Oracle!")
 } catch(err) {
