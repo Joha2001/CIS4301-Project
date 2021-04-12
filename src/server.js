@@ -4,9 +4,9 @@ var oracledb = require('oracledb');
 (async function() {
 try{
    connection = await oracledb.getConnection({
-        user : 'maklein',
-        password : 'Chimera15',
-        connectString : (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = oracle.cise.ufl.edu)(PORT = 1521))(CONNECT_DATA = (SID = orcl)))
+        user : '',
+        password : '',
+        connectString : '(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = oracle.cise.ufl.edu)(PORT = 1521))(CONNECT_DATA = (SID = orcl)))'
    });
    console.log("Successfully connected to Oracle!")
 } catch(err) {
