@@ -8,6 +8,7 @@ try{
         user : process.env.USER,
         password : process.env.PASSWORD,
         connectString : process.env.CONNECT_STRING
+
    });
    console.log("Successfully connected to Oracle!")
 } catch(err) {

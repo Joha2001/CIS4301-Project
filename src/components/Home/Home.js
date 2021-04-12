@@ -8,8 +8,7 @@ const Home = () => {
     
     function handleClick(e) {
         e.preventDefault();
-        history.push("/About");
-        console.log('The link was clicked.');
+        history.push("/Visualizations");
       } //handleClick navigates the user to the visualizations when they click on the Steam button.
 
     return (
