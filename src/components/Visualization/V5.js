@@ -8,12 +8,18 @@ const V5 = () => {
         <header className="App-header">
         <VisuNav></VisuNav>
         <div>
-          <h1 className="app-h1">Number of Users Who Reviewed Game Per 3 Months</h1>
+          <h1 className="app-h1">Number of Users Who Reviewed Game Per Month</h1>
        </div>
        <div className="chart">
         <Bar 
         data={{
-          labels: ['Red']
+          labels: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+          datasets: [{
+            label: 'User Count',
+            data: [
+              0, 1, 6,0, 1, 2,0, 1, 2,0, 1, 2,
+            ]
+          }],
         }}
         height={600}
         width={1200}
