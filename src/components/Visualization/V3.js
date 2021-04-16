@@ -13,13 +13,27 @@ const V3 = () => {
        <div className="chart">
         <Bar 
         data={{
-          labels: ['Red']
+          labels: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+          datasets: [{
+            label: 'Percentage',
+            data: [
+              0, 1, 6,0, 1, 2,0, 1, 2,0, 1, 2,
+            ]
+          }],
         }}
         height={600}
         width={1200}
         options={{
           maintainAspectRatio: false,
           responsive: false,
+          scales: {
+            x: {
+              stacked: true
+            },
+            y: {
+              stacked: true
+            }
+          }
         }
         }
       />
