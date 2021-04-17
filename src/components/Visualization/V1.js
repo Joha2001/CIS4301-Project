@@ -70,7 +70,7 @@ const V1 = () => {
             <input type="number" name="PT" value={playtime} onChange={handlePTChange}/>
             </label>
           </form>
-          <Button variant="contained" color="secondary" onClick={() => queryData()} >Click To Query</Button>
+          <Button class= "squarebutton squarebutton1" onClick={() => queryData()} >Click To Query</Button>
         </div>
       </header>
       </div>
