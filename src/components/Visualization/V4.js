@@ -47,7 +47,6 @@ const V4 = () => {
         }
       />
         </div>
-        <Button variant="contained" color="secondary" onClick={() => queryData()} >Click To Query</Button>
         <div className="id">
         <form>
             <label>
