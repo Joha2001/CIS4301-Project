@@ -5,14 +5,21 @@ import { Bar } from 'react-chartjs-2';
 import axios from 'axios';
 import Button from '@material-ui/core/Button'
 const V3 = () => {
-  let appName = "Rust";
-  let year = "2015";
-  const [output,setOutput]=useState(null)
+  const [output,setOutput]=useState([1,1,1,1,1,1,1,1,1,1,1,1])
+  const [appName,setName]=useState("Rust")
+  const [year,setYear]=useState(2015)
+  const handleNameChange = ({ currentTarget: input }) => {
+    setName(input.value);
+  };
+  const handleYearChange = ({ currentTarget: input }) => {
+    setYear(input.value);
+  };
+
   function queryData()
   {
     axios.get(`http://localhost:5000/api/v3/${appName}/${year}`).then(res => {
-      console.log(res.data);
-      //setOutput(res.data);
+      setOutput([res.data[0][1],res.data[1][1],res.data[2][1],res.data[3][1],res.data[4][1],res.data[5][1],res.data[6][1]
+        ,res.data[7][1],res.data[8][1],res.data[9][1],res.data[10][1],res.data[11][1]]);
     })
   }
     return (
@@ -28,9 +35,7 @@ const V3 = () => {
           labels: ['January','February','March','April','May','June','July','August','September','October','November','December'],
           datasets: [{
             label: 'Percentage',
-            data: [
-              0, 1, 6,0, 1, 2,0, 1, 2,0, 1, 2,
-            ]
+            data: output,
           }],
         }}
         height={600}
@@ -50,19 +55,18 @@ const V3 = () => {
         }
       />
         </div>
-        <Button variant="contained" color="secondary" onClick={() => queryData()} >Click To Query</Button>
         <div className="id">
-          <form>
-          <label>
+        <form>
+            <label>
             Game Name: 
-            <input type="text" name="Name" />
+            <input type="text" name="Name" value={appName} onChange={handleNameChange}/>
             </label>
             <label>
             Year: 
-            <input type="number" name="Year" />
+            <input type="number" name="Year" value={year} onChange={handleYearChange}/>
             </label>
-          <input type="submit" value="Submit" />
           </form>
+          <Button variant="contained" color="secondary" onClick={() => queryData()} >Click To Query</Button>
         </div>
         </header>
       </div>
