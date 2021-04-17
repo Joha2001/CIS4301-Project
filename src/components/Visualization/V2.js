@@ -33,9 +33,17 @@ const V2 = () => {
         </div>
         <div className="id">
           <form>
-            <label className="idlabel">
-            Tag:
-            <input type="text" name="tag" />
+          <label>
+            Genre: 
+            <input type="text" name="Genre" />
+            </label>
+            <label>
+            Tag: 
+            <input type="text" name="Tag" />
+            </label>
+            <label>
+            Year: 
+            <input type="number" name="Year" />
             </label>
           <input type="submit" value="Submit" />
           </form>

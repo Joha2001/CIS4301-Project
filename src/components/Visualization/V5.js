@@ -32,9 +32,13 @@ const V5 = () => {
         </div>
         <div className="id">
           <form>
-            <label className="idlabel">
-            Bundle ID:
-            <input type="number" name="ID" />
+          <label>
+            Bundle Name: 
+            <input type="text" name="Name" />
+            </label>
+            <label>
+            Year: 
+            <input type="number" name="Year" />
             </label>
           <input type="submit" value="Submit" />
           </form>

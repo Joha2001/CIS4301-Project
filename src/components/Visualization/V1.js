@@ -32,9 +32,17 @@ const V1 = () => {
         </div>
         <div className="id">
           <form>
-            <label className="idlabel">
-            Game ID:
-            <input type="number" name="ID" />
+            <label>
+            Game Name: 
+            <input type="text" name="Name" />
+            </label>
+            <label>
+            Year: 
+            <input type="number" name="Year" />
+            </label>
+            <label>
+            Min PlayTime: 
+            <input type="number" name="PT" />
             </label>
           <input type="submit" value="Submit" />
           </form>
