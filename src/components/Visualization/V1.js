@@ -1,9 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Visualization.css';
 import VisuNav from './VisuNav/VisuNav.js';
 import { Line } from 'react-chartjs-2';
 import { withRouter } from 'react-router';
+import axios from 'axios';
+import Button from '@material-ui/core/Button'
 const V1 = () => {
+  let appName = "Stardew Valley";
+  let year = "2016";
+  let playtime = "0";
+  const [output,setOutput]=useState(null)
+  function queryData()
+  {
+    axios.get(`http://localhost:5000/api/v1/${appName}/${year}/${playtime}`).then(res => {
+      console.log(res.data);
+      //setOutput(res.data);
+    })
+  }
     return (
       <div className="App">
       <header className="App-header">
@@ -31,6 +44,7 @@ const V1 = () => {
         }
       />
         </div>
+        <Button variant="contained" color="secondary" onClick={() => queryData()} >Click To Query</Button>
         <div className="id">
           <form>
             <label className="idlabel">

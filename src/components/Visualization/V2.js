@@ -1,8 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Visualization.css';
 import VisuNav from './VisuNav/VisuNav.js'
 import { Line } from 'react-chartjs-2';
+import axios from 'axios';
+import Button from '@material-ui/core/Button'
 const V2 = () => {
+  let genre = "Action";
+  let tag = "Zombies";
+  let year = "2012";
+  const [output,setOutput]=useState(null)
+  function queryData()
+  {
+    axios.get(`http://localhost:5000/api/v2/${genre}/${tag}/${year}`).then(res => {
+      console.log(res.data);
+      //setOutput(res.data);
+    })
+  }
     return (
         <div className="App">
         <header className="App-header">
@@ -31,6 +44,7 @@ const V2 = () => {
         }
       />
         </div>
+        <Button variant="contained" color="secondary" onClick={() => queryData()} >Click To Query</Button>
         <div className="id">
           <form>
             <label className="idlabel">
