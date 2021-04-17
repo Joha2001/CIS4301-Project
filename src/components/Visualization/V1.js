@@ -2,19 +2,27 @@ import React, {useState} from 'react';
 import './Visualization.css';
 import VisuNav from './VisuNav/VisuNav.js';
 import { Line } from 'react-chartjs-2';
-import { withRouter } from 'react-router';
 import axios from 'axios';
 import Button from '@material-ui/core/Button'
 const V1 = () => {
-  let appName = "Stardew Valley";
-  let year = "2016";
-  let playtime = "0";
-  const [output,setOutput]=useState(null)
+  const [output,setOutput]=useState([1,1,1,1,1,1,1,1,1,1,1,1])
+  const [appName,setName]=useState("Stardew Valley")
+  const [year,setYear]=useState(2016)
+  const [playtime,setPT]=useState(0)
+  const handleNameChange = ({ currentTarget: input }) => {
+    setName(input.value);
+  };
+  const handleYearChange = ({ currentTarget: input }) => {
+    setYear(input.value);
+  };
+  const handlePTChange = ({ currentTarget: input }) => {
+    setPT(input.value);
+  };
   function queryData()
   {
     axios.get(`http://localhost:5000/api/v1/${appName}/${year}/${playtime}`).then(res => {
-      console.log(res.data);
-      //setOutput(res.data);
+      setOutput([res.data[0][1],res.data[1][1],res.data[2][1],res.data[3][1],res.data[4][1],res.data[5][1],res.data[6][1]
+    ,res.data[7][1],res.data[8][1],res.data[9][1],res.data[10][1],res.data[11][1]]);
     })
   }
     return (
@@ -30,9 +38,11 @@ const V1 = () => {
           labels: ['January','February','March','April','May','June','July','August','September','October','November','December'],
           datasets: [{
             label: 'Review Count',
-            data: [
-              0, 1, 6,0, 1, 2,0, 1, 2,0, 1, 2,
-            ]
+            data: output,
+            borderColor: 'rgb(42, 71, 94)',
+            backgroundColor: 'rgb(102, 192, 244, .1)',
+            pointBackgroundColor: 'rgb(23, 26, 33)',
+            pointRadius: '4',
           }],
         }}
         height={600}
@@ -43,16 +53,24 @@ const V1 = () => {
         }
         }
       />
+        
         </div>
-        <Button variant="contained" color="secondary" onClick={() => queryData()} >Click To Query</Button>
         <div className="id">
           <form>
-            <label className="idlabel">
-            Game ID:
-            <input type="number" name="ID" />
+            <label>
+            Game Name: 
+            <input type="text" name="Name" value={appName} onChange={handleNameChange}/>
             </label>
-          <input type="submit" value="Submit" />
+            <label>
+            Year: 
+            <input type="number" name="Year" value={year} onChange={handleYearChange}/>
+            </label>
+            <label>
+            Min PlayTime: 
+            <input type="number" name="PT" value={playtime} onChange={handlePTChange}/>
+            </label>
           </form>
+          <Button variant="contained" color="secondary" onClick={() => queryData()} >Click To Query</Button>
         </div>
       </header>
       </div>

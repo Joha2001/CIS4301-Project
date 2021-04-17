@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
+
 const Steam = () => {
+  
+
     return (
-        <div className="App">
+      <div className="App">
         <header className="App-header">
         <div>
-          <h1>Filler Page</h1>
-          <p>Filler Text (Could be the Documentation Page?)</p>
-       </div>
+          <h1>Filler</h1>
+        </div>
         </header>
       </div>
        

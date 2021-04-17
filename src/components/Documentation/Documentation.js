@@ -4,7 +4,7 @@ const Documentation = () => {
         <div className="App">
         <header className="App-header">
         <div>
-        <h3>Resoures Used:</h3>
+        <h3>Resources Used:</h3>
           <h6>CISE Oracle Database Server and Oracle SQL Developer, Axios, Visual Studio Code, Javascript, React, node-oracledb</h6>
           <p>-----------------------------------------------------------------------</p>
           <h3>Databases Used:</h3>

@@ -10,7 +10,7 @@ import V2 from './components/Visualization/V2.js';
 import V3 from './components/Visualization/V3.js';
 import V4 from './components/Visualization/V4.js';
 import V5 from './components/Visualization/V5.js';
-import VCustom from './components/Visualization/VCustom.js';
+import VTuple from './components/Visualization/VTuple.js';
 import Steam from './components/Steam/Steam.js';
 class App extends Component {
   render() {
@@ -28,7 +28,7 @@ class App extends Component {
            <Route path="/V3" component={V3}/>
            <Route path="/V4" component={V4}/>
            <Route path="/V5" component={V5}/>
-           <Route path="/VCustom" component={VCustom}/>
+           <Route path="/VTuple" component={VTuple}/>
          </Switch>
     </BrowserRouter>
     );
