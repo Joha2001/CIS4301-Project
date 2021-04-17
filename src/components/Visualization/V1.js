@@ -2,7 +2,6 @@ import React from 'react';
 import './Visualization.css';
 import VisuNav from './VisuNav/VisuNav.js';
 import { Line } from 'react-chartjs-2';
-import { withRouter } from 'react-router';
 const V1 = () => {
     return (
       <div className="App">
