@@ -13,12 +13,12 @@ const VTuple = () => {
   }
     return (
         <div className="App">
-        <header className="App-header">
+        <header className="App-header1">
         <VisuNav></VisuNav>
-        <Button className="outputButton" variant="contained" color="secondary" onClick={() => queryData()} >Click To Query</Button>
         <div>
-          <h1 className="app-h1">Tuple Count</h1>
-          <p className="output"> {output} </p>
+          <h1 className="app-h2">Tuple Count</h1>
+          <p className="output1"> {output} </p>  
+          <p><Button class = "circlebutton circlebutton1" onClick={() => queryData()} >Click To Query</Button></p>
        </div>
         </header>
       </div>
