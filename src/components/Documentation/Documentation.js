@@ -4,8 +4,13 @@ const Documentation = () => {
         <div className="App">
         <header className="App-header">
         <div>
-          <h1>Filler Page</h1>
-          <p>Filler Text (Could be the Documentation Page?)</p>
+        <h3>Resoures Used:</h3>
+          <h6>CISE Oracle Database Server and Oracle SQL Developer, Axios, Visual Studio Code, Javascript, React, node-oracledb</h6>
+          <p>-----------------------------------------------------------------------</p>
+          <h3>Databases Used:</h3>
+          <a href="https://www.kaggle.com/luthfim/steam-reviews-dataset">Steam Reviews Dataset</a>
+          <p></p>
+          <a href="https://cseweb.ucsd.edu/~jmcauley/datasets.html#google_local">Steam Video Game and Bundle</a>
        </div>
         </header>
       </div>
