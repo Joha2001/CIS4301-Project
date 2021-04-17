@@ -39,6 +39,10 @@ const V1 = () => {
           datasets: [{
             label: 'Review Count',
             data: output,
+            borderColor: 'rgb(42, 71, 94)',
+            backgroundColor: 'rgb(102, 192, 244, .1)',
+            pointBackgroundColor: 'rgb(23, 26, 33)',
+            pointRadius: '4',
           }],
         }}
         height={600}

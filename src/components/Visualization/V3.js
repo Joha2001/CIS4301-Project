@@ -5,7 +5,7 @@ import { Bar } from 'react-chartjs-2';
 import axios from 'axios';
 import Button from '@material-ui/core/Button'
 const V3 = () => {
-  const [output,setOutput]=useState([1,1,1,1,1,1,1,1,1,1,1,1])
+  const [output,setOutput]=useState([50,50,50,50,50,50,50,50,50,50,50,50])
   const [appName,setName]=useState("Rust")
   const [year,setYear]=useState(2015)
   const handleNameChange = ({ currentTarget: input }) => {
@@ -34,9 +34,16 @@ const V3 = () => {
         data={{
           labels: ['January','February','March','April','May','June','July','August','September','October','November','December'],
           datasets: [{
-            label: 'Percentage',
+            label: 'Positive Percentage',
             data: output,
-          }],
+            backgroundColor: 'rgb(214, 233, 198)',
+          },
+          {
+            label: 'Negative Percentage',
+            data: [100-output[0],100-output[1],100-output[2],100-output[3],100-output[4],100-output[5],
+            100-output[6],100-output[7],100-output[8],100-output[9],100-output[10],100-output[11]],
+            backgroundColor: 'rgb(235, 204, 209)',
+          },],
         }}
         height={600}
         width={1200}
@@ -44,12 +51,17 @@ const V3 = () => {
           maintainAspectRatio: false,
           responsive: false,
           scales: {
-            x: {
-              stacked: true
-            },
-            y: {
-              stacked: true
-            }
+            xAxes: [{
+              stacked: true,
+            },],
+            yAxes: [{
+              stacked: true,
+              display: true,
+              ticks: {
+                  beginAtZero: true,
+                  max: 100,
+              }
+          }]
           }
         }
         }

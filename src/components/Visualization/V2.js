@@ -40,6 +40,10 @@ const V2 = () => {
             datasets: [{
               label: 'Average Price',
               data: output,
+              borderColor: 'rgb(42, 71, 94)',
+              backgroundColor: 'rgb(102, 192, 244, .1)',
+              pointBackgroundColor: 'rgb(23, 26, 33)',
+              pointRadius: '4',
             }],
           }
         }
