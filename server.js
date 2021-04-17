@@ -180,7 +180,7 @@ async function v3(req, res) {
               AND x2a.MonthID = x3a.MonthID
               AND x3a.MonthID = x4a.MonthID
       )
-      SELECT Mon, ROUND((Positive / (Positive + Negative) * 100), 2) AS Rating FROM x5`
+      SELECT Mon, ROUND((Positive / (Positive + Negative + 0.000001) * 100), 2) AS Rating FROM x5`
     );
   } catch (err) {
     return res.send(err.message);
@@ -352,6 +352,57 @@ async function v5(req, res) {
 app.get('/api/v5/:bundleName/:year', (req, res) => {
   console.log('attempting connection');
   v5(req, res);
+});
+
+async function tuple(req, res) {
+  try {
+    connection = await oracledb.getConnection({
+      user: process.env.USER,
+      password: process.env.PASSWORD,
+      connectString: process.env.CONNECT_STRING
+    });
+
+    console.log('connected to database');
+
+    result = await connection.execute(
+      `WITH x1 AS (SELECT COUNT(*) AS totalT FROM Good.APP), 
+      x2 AS (SELECT COUNT(*) AS totalT FROM Good.BUNDLE),
+      x3 AS (SELECT COUNT(*) AS totalT FROM Good.CONTAINS),
+      x4 AS (SELECT COUNT(*) AS totalT FROM Good.GENRE),
+      x5 AS (SELECT COUNT(*) AS totalT FROM Good.GENREHAS),
+      x6 AS (SELECT COUNT(*) AS totalT FROM Good.MONTHS),
+      x7 AS (SELECT COUNT(*) AS totalT FROM Good.OWNS),
+      x8 AS (SELECT COUNT(*) AS totalT FROM Good.PLAYER),
+      x9 AS (SELECT COUNT(*) AS totalT FROM Good.REVIEW),
+      x10 AS (SELECT COUNT(*) AS totalT FROM Good.REVIEWEXTRA),
+      x11 AS (SELECT COUNT(*) AS totalT FROM Good.TAG),
+      x12 AS (SELECT COUNT(*) AS totalT FROM Good.TAGHAS)
+      SELECT (x1.totalT + x2.totalT + x3.totalT + x4.totalT + x5.totalT + x6.totalT + x7.totalT + x8.totalT + x9.totalT + x10.totalT + x11.totalT + x12.totalT) as totalTuple 
+      FROM x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12`
+    );
+  } catch (err) {
+    return res.send(err.message);
+  } finally {
+    if (connection) {
+      try {
+        await connection.close();
+        console.log('close connection success');
+      } catch (err) {
+        console.error(err.message);
+      }
+    }
+    if (result.rows.length == 0) {
+      return res.send('Query sent no rows!');
+    } else {
+      return res.send(result.rows);
+    }
+
+  }
+}
+
+app.get('/api/tuple', (req, res) => {
+  console.log('attempting connection');
+  tuple(req, res);
 });
 
 const port = process.env.PORT || 5000;

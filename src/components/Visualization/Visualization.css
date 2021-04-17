@@ -28,26 +28,18 @@
 .id {
   position: absolute;
   top: 940px;
-  padding-right: 300px;
 }
 
-.idlabel {
+.output {
+  position: absolute;
+  top: 400px;
+  right: 850px;
   font-size: calc(10px + 4vmin);
 }
 
-input[type=number],[type=text] {
+.outputButton {
   position: absolute;
-  top: 15px;
-  padding: 10px;
-  padding-right: 15px;
-}
-input[type="submit"] {
-  position: absolute;
-  top: 15px;
-  padding: 10px;
-  left: 460px;
-  background-color:#171a21;
-  color: #c7d5e0;
+  top: 400px;
 }
 
 .Visual{
