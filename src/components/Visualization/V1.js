@@ -44,15 +44,14 @@ const V1 = () => {
         }
       />
         </div>
-        <Button variant="contained" color="secondary" onClick={() => queryData()} >Click To Query</Button>
         <div className="id">
           <form>
             <label className="idlabel">
             Game ID:
             <input type="number" name="ID" />
             </label>
-          <input type="submit" value="Submit" />
           </form>
+          <Button class= "squarebutton squarebutton1" onClick={() => queryData()} >Click To Query</Button>
         </div>
       </header>
       </div>

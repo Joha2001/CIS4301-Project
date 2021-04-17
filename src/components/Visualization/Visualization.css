@@ -49,3 +49,36 @@ input[type="submit"] {
   background-color:#171a21;
   color: #c7d5e0;
 }
+
+.Visual{
+position: absolute;
+top: 300px;
+padding: 10px;
+left: 250px;
+}
+
+.squarebutton {
+  
+  border: none;
+  color: white;
+  padding: 16px;
+  text-align: justify;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-left: 250px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width: 185px;
+}
+
+.squarebutton1 {
+  background-color: #171a21; 
+  color: white; 
+  border: 2px solid #66c0f4;
+}
+.squarebutton1:hover {
+  background-color: #66c0f4;
+  color: white;
+}
