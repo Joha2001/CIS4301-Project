@@ -10,7 +10,7 @@ const VisuNav = () => {
         <NavLink className="nav-link" to="/V3">V3</NavLink>
         <NavLink className="nav-link" to="/V4">V4</NavLink>
         <NavLink className="nav-link" to="/V5">V5</NavLink>
-        <NavLink className="nav-link" to="/VCustom">Custom</NavLink>
+        <NavLink className="nav-link" to="/VTuple">Tuple</NavLink>
     </div>
 );
 }

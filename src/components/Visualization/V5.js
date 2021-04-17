@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import './Visualization.css';
 import VisuNav from './VisuNav/VisuNav.js'
-import { Line } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 import axios from 'axios';
 import Button from '@material-ui/core/Button'
 const V5 = () => {
-  const [output,setOutput]=useState([1,1,1,1,1,1,1,1,1,1,1,1])
+  const [output,setOutput]=useState([50,50,50,50,50,50,50,50,50,50,50,50])
   const [bundleName,setName]=useState("Eidos Anthology")
   const [year,setYear]=useState(2015)
   const handleNameChange = ({ currentTarget: input }) => {
@@ -27,26 +27,42 @@ const V5 = () => {
         <header className="App-header">
         <VisuNav></VisuNav>
         <div>
-          <h1 className="app-h1">Number of Users Who Reviewed Game Per Month</h1>
+          <h1 className="app-h1">Percentage of Positive/Negative Reviews for Specified Bundle</h1>
        </div>
        <div className="chart">
-        <Line 
+        <Bar 
         data={{
           labels: ['January','February','March','April','May','June','July','August','September','October','November','December'],
           datasets: [{
-            label: 'User Count',
+            label: 'Positive Percentage',
             data: output,
-            borderColor: 'rgb(42, 71, 94)',
-            backgroundColor: 'rgb(102, 192, 244, .1)',
-            pointBackgroundColor: 'rgb(23, 26, 33)',
-            pointRadius: '4',
-          }],
+            backgroundColor: 'rgb(214, 233, 198)',
+          },
+          {
+            label: 'Negative Percentage',
+            data: [100-output[0],100-output[1],100-output[2],100-output[3],100-output[4],100-output[5],
+            100-output[6],100-output[7],100-output[8],100-output[9],100-output[10],100-output[11]],
+            backgroundColor: 'rgb(235, 204, 209)',
+          },],
         }}
         height={600}
         width={1200}
         options={{
           maintainAspectRatio: false,
           responsive: false,
+          scales: {
+            xAxes: [{
+              stacked: true,
+            },],
+            yAxes: [{
+              stacked: true,
+              display: true,
+              ticks: {
+                  beginAtZero: true,
+                  max: 100,
+              }
+          }]
+          }
         }
         }
       />
@@ -54,7 +70,7 @@ const V5 = () => {
         <div className="id">
         <form>
             <label>
-            Game Name: 
+            Bundle Name: 
             <input type="text" name="Name" value={bundleName} onChange={handleNameChange}/>
             </label>
             <label>

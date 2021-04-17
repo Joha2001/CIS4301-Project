@@ -27,7 +27,7 @@ const V3 = () => {
         <header className="App-header">
         <VisuNav></VisuNav>
         <div>
-          <h1 className="app-h1">Percentage of Positive and Negative Reviews Per Month</h1>
+          <h1 className="app-h1">Percentage of Positive/Negative Reviews for Specified Game</h1>
        </div>
        <div className="chart">
         <Bar 

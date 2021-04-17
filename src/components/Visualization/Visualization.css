@@ -29,3 +29,15 @@
   position: absolute;
   top: 940px;
 }
+
+.output {
+  position: absolute;
+  top: 400px;
+  right: 850px;
+  font-size: calc(10px + 4vmin);
+}
+
+.outputButton {
+  position: absolute;
+  top: 400px;
+}

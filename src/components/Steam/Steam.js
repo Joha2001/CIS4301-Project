@@ -7,8 +7,7 @@ const Steam = () => {
       <div className="App">
         <header className="App-header">
         <div>
-          <h1>Testing REST API on Steam Page</h1>
-          <p>Enter an App ID to get App Name</p>
+          <h1>Filler</h1>
         </div>
         </header>
       </div>
