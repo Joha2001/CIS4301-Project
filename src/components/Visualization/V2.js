@@ -71,7 +71,7 @@ const V2 = () => {
             <input type="number" name="Year" value={year} onChange={handleYearChange}/>
             </label>
           </form>
-          <Button class = "squarebutton squarebutton1" onClick={() => queryData()} >Click To Query</Button>
+          <Button class = "squarebutton squarebutton1" disableRipple="true" onClick={() => queryData()} >Click To Query</Button>
         </div>
         </header>
       </div>

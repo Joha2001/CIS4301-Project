@@ -18,7 +18,7 @@ const VTuple = () => {
         <div>
           <h1 className="app-h2">Tuple Count</h1>
           <p className="output1"> {output} </p>  
-          <p><Button class = "circlebutton circlebutton1" onClick={() => queryData()} >Click To Query</Button></p>
+          <p><Button class = "circlebutton circlebutton1" disableRipple="true" onClick={() => queryData()} >Click To Query</Button></p>
        </div>
         </header>
       </div>
